@@ -1,0 +1,173 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, monospace;
+  margin: 0;padding: 0;
+}
+
+form.login {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+form.time{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5%;
+  .form-group{
+    width: 40%;
+    margin-left: 10px;
+    margin-bottom: 0px;
+  }
+}
+.form-group{
+  width: 100%;
+  margin-bottom: 10px;
+}
+label{
+  margin-bottom: 5px;
+  display: block;
+}
+input[type=text] {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 2px solid #750570;
+  border-radius: 5%;
+  outline: none;
+}
+
+button.login {
+  width: 50%;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #109205;
+  color: white;
+  border: none;
+  border-radius: 5%;
+  outline: none;
+
+  &:hover {
+    background: #1cc50d;
+  }
+}
+
+
+
+button.add {
+  width: 36px;
+  height: 36px;
+  padding: 10px 10px;
+  cursor: pointer;
+  background: #109205;
+  color: white;
+  border: none;
+  border-radius: 5%;
+  outline: none;
+}
+
+button.add:hover {
+  background: #1cc50d;
+}
+
+.navLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+.navLogo {
+  margin: 10px;
+  display: block;
+}
+.navTitle {
+  margin: 10px;
+  display: block;
+}
+
+.navSelect { 
+  margin: 10px;
+  padding: 5px;
+  display: block;
+  a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+}
+
+.navSelect:hover {
+  border-bottom: 2px solid whitesmoke;
+  border-radius: 10px;
+}
+
+.navMenu {
+  margin: 10px;
+  padding: 5px;
+  display: block;
+}
+
+.navMenu:hover {
+  background: #be09b5;
+  border: #be09b5;
+  border-radius: 10px;
+}
+
+.cQLogin {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cQDashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cQNavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: whitesmoke;
+  background: #750570;
+}
+.loginPanel {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #f2f2f2;
+  border-radius: 5%;
+}
+.heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.timeEntry {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.formControls {
+  display: flex;
+  flex-direction: column;
+}
+
+.formDetails {
+  display: flex;
+  flex-direction: column;
+}
