@@ -11,28 +11,34 @@
 
   <body>
     <div class="header">
-      <div class="header--leftSection">
+      <div class="header__section">
         <h1 class="logo">CivicQuest</h1>
-        <h3 class="header--title">Login</h3>
+        <h3 class="header__label">Login</h3>
       </div>
-      <div class="header--rightSection"></div>
+      <!-- /header__section -->
+      <div class="header__section header__section--reverse"></div>
     </div>
+    <!-- /header -->
     <div class="page page--login">
       <div class="panel panel--login">
         <form class="form form--login" action="timesheets.html">
-          <div class="form--group--column">
-            <label for="username">Username</label>
-            <input class="form--input--text" required type="text" placeholder="Your username..." />
+          <div class="form__group form__group--column">
+            <label class="form__label--column" for="username">Username</label>
+            <input class="form__inputText" required type="text" placeholder="Your username..." />
           </div>
-          <div class="form--group--column">
-            <label for="password">Password</label>
-            <input class="form--input--text" required type="text" placeholder="Your password..." />
+          <!-- /form__group -->
+          <div class="form__group form__group--column">
+            <label class="form__label--column" for="password">Password</label>
+            <input class="form__inputText" required type="password" placeholder="Your password..." />
           </div>
+          <!-- /form__group -->
           <button class="btn btn--loginSubmit" type="submit">Login</button>
         </form>
+        <!-- /form -->
       </div>
+      <!-- /panel -->
     </div>
-
+    <!-- /page -->
     <script src="scripts/playground.js"></script>
   </body>
 </html>

@@ -11,53 +11,91 @@
 
   <body>
     <div class="header">
-      <div class="header--leftSection">
+      <div class="header__section">
         <h1 class="logo">CivicQuest</h1>
-        <h3 class="header--title">Dashboard</h3>
-        <h1 class="header--division">|</h1>
+        <h3 class="header__label">Dashboard</h3>
+        <h1 class="header__label">|</h1>
         <div class="nav">
-          <h3 class="nav--item"><a href="timesheets.html">Timesheet</a></h3>
-          <h3 class="nav--item"><a href="timesheets.html">Supervisors</a></h3>
-          <h3 class="nav--item"><a href="timesheets.html">Projects</a></h3>
+          <h3 class="nav__item"><a href="timesheets.html">Timesheet</a></h3>
+          <h3 class="nav__item"><a href="timesheets.html">Supervisors</a></h3>
+          <h3 class="nav__item"><a href="timesheets.html">Projects</a></h3>
         </div>
+        <!-- /nav -->
       </div>
-      <div class="header--rightSection">
+      <!-- /header__section -->
+      <div class="header__section header__section--reverse">
         <h3 class="menu">Menu</h3>
       </div>
+      <!-- /header__section -->
     </div>
-    <div class="page--time">
-      <div class="panel panel--totaltime">
-        <p>Hello! Record your work here!</p>
+    <!-- /header -->
+    <div class="page page--time">
+      <div class="info-timer">
+        <img class="info-timer__img" src="images/alarm-clock.png" />
+        <h1 class="info-timer__value">0</h1>
+        <p class="info-timer__text">hours worked</p>
       </div>
-      <div class="panel">
-        <div class="panel--timesheet">
-          <form class="form form--time" action="dashboard.html">
-            <div class="form--group--row">
-              <input class="form--input--text" required type="text" placeholder="End" />
+      <div class="panel panel--timesheet">
+        <form class="form form--time" action="timesheets.html">
+          <div class="form__fields--timesheet">
+            <div class="form__group form__group--row">
+              <label class="form__label form__label--rowStart" for="begin">BEGIN</label>
+              <input class="form__inputText" required type="text" placeholder="00:00:00" />
+              <label class="form__label form__label--row" for="end">END</label>
+              <input class="form__inputText" required type="text" placeholder="00:00:00" />
             </div>
-            <div class="form--group--row">
-              <input class="form--input--text" required type="text" placeholder="Begin" />
+            <!-- /form__group -->
+            <div class="form__group form__group--column">
+              <label class="form__label form__label--column" for="description">Description</label>
+              <textarea class="form__inputText form__inputText--textarea" placeholder="Write here..."></textarea>
             </div>
-            <button class="btn btn--addTimesheet" type="submit">+</button>
-          </form>
-        </div>
+            <!-- /form__group -->
+          </div>
+          <!-- /form__fields -->
+          <div class="form__controls--timesheet">
+            <button class="btn btn--timesheet btn--timesheet--add" type="submit">+</button>
+            <button class="btn btn--timesheet btn--timesheet--clear" type="reset">x</button>
+          </div>
+          <!-- /form__controls -->
+        </form>
       </div>
-      <div class="panel">
-        <div class="panel--timesheet">
-          <p>sdgssgdfsdsdsg</p>
-        </div>
-        <div class="panel--controls">
-          <p>asdnsodkinol</p>
-        </div>
-      </div>
-      <div class="panel">
-        <div class="panel--timesheet">
-          <p>sdgssgdfsdsdsg</p>
-        </div>
-        <div class="formDetails">
-          <p>asdnsodkinol</p>
-        </div>
-      </div>
+      <!-- /panel -->
     </div>
+    <!-- /page -->
+
+    <div class="container">
+      <div class="time-entries">
+        <div class="time-entry">
+          <div class="time-details">
+            <div class="time-stamps">
+              <div class="time-stamp">
+                <p class="time-stamp__text">Start</p>
+                <input type="text" class="time-stamp__input" placeholder="00:00:00" />
+              </div>
+              <div class="time-stamp">
+                <p class="time-stamp__text">End</p>
+                <input type="text" class="time-stamp__input" placeholder="00:00:00" />
+              </div>
+            </div>
+            <!-- /.time-stamps -->
+            <div class="time-info">
+              <label class="time-info__label">Notes:</label>
+              <textarea cols="30" rows="10" class="time-info__desc"></textarea>
+            </div>
+            <!-- /.time-info -->
+          </div>
+          <!-- /.time-details -->
+          <div class="time-actions">
+            <a href="#" class="time-action time-action--timer">start</a>
+            <a href="#" class="time-action time-action--edit">edit</a>
+            <a href="#" class="time-action time-action--delete">delete</a>
+          </div>
+          <!-- /.time-actions -->
+        </div>
+        <!-- /.time-entry -->
+      </div>
+      <!-- /.time-entries -->
+    </div>
+    <!-- /.container -->
   </body>
 </html>
