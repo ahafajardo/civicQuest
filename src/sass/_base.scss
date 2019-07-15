@@ -1,13 +1,13 @@
 // ------------- MIXINS --------------
 @mixin nav-styles {
-  margin: 10px;
-  padding: 5px;
+  margin: $margin;
+  padding: $padding/4;
   display: block;
   cursor: pointer;
 
   &:hover {
-    border-bottom: 2px solid whitesmoke;
-    border-radius: 10px;
+    border-bottom: $border-width solid $text-color-light;
+    border-radius: $border-radius;
   }
 }
 // ------------- MIXINS --------------
@@ -23,12 +23,23 @@ body {
   font-family: Roboto, monospace;
   margin: 0;
   padding: 0;
+  font-size: 16px;
+}
+.input {
+  padding: $padding/2 $padding;
+  border: none;
+  border-bottom: $border-width solid $brand-primary;
+  border-radius: $border-radius;
+  outline: none;
+  &:focus {
+    box-shadow: 0 0 $border-width $brand-primary;
+  }
 }
 .form {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 10px;
+  padding: $padding/2;
 
   &--login {
     flex-direction: column;
@@ -38,7 +49,7 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    border-radius: 5%;
+    border-radius: $border-radius;
   }
 }
 
@@ -52,16 +63,15 @@ body {
 .form__fields--timesheet {
   display: flex;
   flex-direction: column;
-  margin-right: 5px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  padding: 10px;
-  padding-bottom: 0px;
+  margin-right: $margin/2;
+  background-color: $section-primary;
+  border-radius: $border-radius;
+  padding: $padding/2 $padding/2 0;
 }
 
 .form__group {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: $margin;
   &--row {
     flex-direction: row;
   }
@@ -75,16 +85,16 @@ body {
   align-items: center;
 
   &--column {
-    margin-bottom: 5px;
+    margin-bottom: $margin/2;
     display: block;
   }
 
   &--row {
-    margin: 0px 5px;
+    margin: 0px $margin/2;
   }
 
   &--rowStart {
-    margin: 0 5px 0 0;
+    margin: 0 $margin/2 0 0;
   }
 }
 
@@ -92,10 +102,10 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 15px;
+  margin-top: $margin * 1.5;
 }
 .info-timer__value {
-  margin: 0 10px;
+  margin: 0 $margin;
 }
 .info-timer__img {
   height: auto;
@@ -104,10 +114,10 @@ body {
 
 .form__inputText {
   width: 100%;
-  padding: 10px 20px 6px;
+  padding: $padding/2 $padding 6px;
   border: none;
-  border-bottom: 2px solid #750570;
-  border-radius: 5px;
+  border-bottom: $border-width solid $brand-primary;
+  border-radius: $border-radius;
   outline: none;
   &--textarea {
     height: 100%;
@@ -116,39 +126,38 @@ body {
 }
 .btn {
   border: none;
-  border-radius: 5px;
-  outline: none;
+  border-radius: $border-radius;
   cursor: pointer;
   &--loginSubmit {
     width: 50%;
-    padding: 10px 20px;
-    background: #109205;
-    color: white;
+    padding: $padding/2 $padding;
+    background: $login-primary;
+    color: $text-color-light;
     &:hover {
-      background: #1cc50d;
+      background: scale-color($login-primary, $lightness: $darken-factor);
     }
   }
   &--timesheet {
-    width: 36px;
-    height: 36px;
-    padding: 10px 10px;
-    color: white;
+    width: $button-size;
+    height: $button-size;
+    padding: $padding/2 $padding/2;
+    color: $text-color-light;
     &--add {
-      background: #109205;
+      background: $add-primary;
       &:hover {
-        background: #1cc50d;
+        background: scale-color($add-primary, $lightness: $darken-factor);
       }
     }
     &--edit {
-      background: #0b3bbe;
+      background: $edit-primary;
       &:hover {
-        background: #3a63d3;
+        background: scale-color($edit-primary, $lightness: $darken-factor);
       }
     }
     &--clear {
-      background: #a50b0b;
+      background: $delete-primary;
       &:hover {
-        background: #c72222;
+        background: scale-color($delete-primary, $lightness: $darken-factor);
       }
     }
   }
@@ -159,8 +168,8 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  color: whitesmoke;
-  background: #750570;
+  color: $text-color-light;
+  background: $brand-primary;
 }
 
 .header__section {
@@ -174,12 +183,12 @@ body {
 }
 
 .header__label {
-  margin: 10px;
+  margin: $margin;
   display: block;
 }
 
 .logo {
-  margin: 10px;
+  margin: $margin;
   display: block;
 }
 .nav {
@@ -192,7 +201,7 @@ body {
   @include nav-styles;
   a {
     text-decoration: none;
-    color: whitesmoke;
+    color: $text-color-light;
   }
 }
 
@@ -216,19 +225,19 @@ body {
 .panel {
   display: flex;
   flex-wrap: wrap;
-  border-radius: 5px;
-  margin: 5px;
+  border-radius: $border-radius;
+  margin: $margin/2;
   &--login {
     flex-direction: column;
-    background-color: #f2f2f2;
+    background-color: $section-primary;
   }
   &--totalTime {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    background-color: $section-primary;
+    margin-top: $margin;
+    margin-bottom: $margin;
   }
   &--timesheet {
     flex-direction: row-reverse;
@@ -245,25 +254,25 @@ body {
 }
 
 .time-entries {
-  padding: 0 10%;
-  background: #f5f5f5;
+  padding: 0 $padding/2;
   width: 100%;
 }
 
 .time-entry {
-  border-bottom: 2px solid black;
-  margin-bottom: 10px;
+  margin-bottom: $margin;
   display: flex;
 }
 
 .time-details {
-  padding: 10px;
-  background: #e5e5e5;
+  padding: $padding/2;
+  border-radius: $border-radius;
+  background: $section-primary;
   flex: 10;
 }
 
 .time-stamps {
   display: flex;
+  flex-wrap: nowrap;
 }
 
 .time-stamp {
@@ -273,24 +282,27 @@ body {
   align-items: center;
 
   &:first-child {
-    margin-right: 10px;
+    margin-right: $margin;
   }
 }
 
 .time-stamp__text {
-  flex: 1;
-  margin: 0 10px 0 0;
+  margin: 0 $margin 0 0;
 }
 
 .time-stamp__input {
-  flex: 10;
-  padding: 5px;
+  flex: 5;
 }
 
 .time-info {
-  margin-top: 10px;
+  margin-top: $margin;
   display: flex;
   flex-direction: column;
+}
+
+.time-info__desc {
+  margin-top: $margin;
+  resize: vertical;
 }
 
 .time-actions {
@@ -302,22 +314,40 @@ body {
 
 .time-action {
   text-decoration: none;
-  color: white;
+  color: $text-color-light;
+  border-radius: $border-radius;
   width: 100%;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: $margin/2;
+
+  &:first-child {
+    margin-bottom: $margin/2;
+  }
+  &:last-child {
+    margin-top: $margin/2;
+  }
 
   &--delete {
-    background: red;
+    background: $delete-primary;
+    &:hover {
+      background: scale-color($delete-primary, $lightness: $darken-factor);
+    }
   }
 
   &--edit {
-    background: blue;
+    background: $edit-primary;
+    &:hover {
+      background: scale-color($edit-primary, $lightness: $darken-factor);
+    }
   }
 
   &--timer {
-    background: goldenrod;
+    background: $timer-primary;
+    &:hover {
+      background: scale-color($timer-primary, $lightness: $darken-factor);
+    }
   }
 }
