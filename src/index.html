@@ -19,26 +19,23 @@
       <div class="header__section header__section--reverse"></div>
     </div>
     <!-- /header -->
-    <div class="page page--login">
-      <div class="panel panel--login">
-        <form class="form form--login" action="timesheets.html">
-          <div class="form__group form__group--column">
-            <label class="form__label--column" for="username">Username</label>
-            <input class="form__inputText" required type="text" placeholder="Your username..." />
-          </div>
-          <!-- /form__group -->
-          <div class="form__group form__group--column">
-            <label class="form__label--column" for="password">Password</label>
-            <input class="form__inputText" required type="password" placeholder="Your password..." />
-          </div>
-          <!-- /form__group -->
-          <button class="btn btn--loginSubmit" type="submit">Login</button>
-        </form>
-        <!-- /form -->
+    <div class="login">
+      <div class="login-credentials">
+        <div class="login-field">
+          <p class="login-field__text">Username</p>
+          <input class="input" required type="text" placeholder="Your username..." />
+        </div>
+        <!-- /login-field-->
+        <div class="login-field">
+          <p class="login-field__text">Password</p>
+          <input class="input" required type="password" placeholder="Your password..." />
+        </div>
+        <!-- /login-field -->
+        <a href="timesheets.html" class="btn login-action" type="submit">Login</a>
       </div>
-      <!-- /panel -->
+      <!-- /login-credentials -->
     </div>
-    <!-- /page -->
+    <!-- /login -->
     <script src="scripts/playground.js"></script>
   </body>
 </html>

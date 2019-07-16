@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav__item {
+  @include nav-styles;
+  a {
+    text-decoration: none;
+    color: $text-color-light;
+  }
+}
+
+.menu {
+  @include nav-styles;
+}

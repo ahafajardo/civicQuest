@@ -1,0 +1,23 @@
+.input {
+  width: 100%;
+  padding: $padding/2 $padding;
+  border: none;
+  border-bottom: $border-width solid $brand-primary;
+  border-radius: $border-radius;
+  outline: none;
+  &:focus {
+    box-shadow: 0 0 $border-width $brand-primary;
+  }
+}
+
+.btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: $text-color-light;
+  border-radius: $border-radius;
+  border: none;
+  cursor: pointer;
+}
