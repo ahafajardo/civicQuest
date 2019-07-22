@@ -68,25 +68,4 @@
   &:last-child {
     margin-bottom: 0;
   }
-
-  &--delete {
-    background: $delete-primary;
-    &:hover {
-      background: scale-color($delete-primary, $lightness: $darken-factor);
-    }
-  }
-
-  &--edit {
-    background: $edit-primary;
-    &:hover {
-      background: scale-color($edit-primary, $lightness: $darken-factor);
-    }
-  }
-
-  &--timer {
-    background: $timer-primary;
-    &:hover {
-      background: scale-color($timer-primary, $lightness: $darken-factor);
-    }
-  }
 }

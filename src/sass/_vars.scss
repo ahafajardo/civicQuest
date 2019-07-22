@@ -9,10 +9,10 @@ $button-size: 36px;
 
 // Typography
 $font-size-base: 1.15rem;
-$font-size-sm: $font-size-base - 0.25;
+$font-size-sm: $font-size-base - 0.5;
 $font-size-md: $font-size-base;
 $font-size-lg: $font-size-base + 0.15;
-$font-size-xl: $font-size-base + 0.25;
+$font-size-xl: $font-size-base + 0.5;
 $line-height: 1.25rem;
 $font-family: Roboto, monospace;
 
@@ -34,11 +34,10 @@ $brand-primary: $cardinal-pink;
 $brand-secondary: $white;
 $section-primary: $whitesmoke;
 
-$add-primary: $malachite;
-$login-primary: $malachite;
-$timer-primary: $golden-dream;
-$edit-primary: $blue;
-$delete-primary: $red;
+$btn-primary: $malachite;
+$btn-secondary: $blue;
+$btn-tertiary: $golden-dream;
+$btn-danger: $red;
 
 $text-color-light: $white;
 $text-color-dark: $black;

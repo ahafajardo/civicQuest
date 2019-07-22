@@ -30,9 +30,4 @@
 .login-action {
   width: 50%;
   padding: $padding/2 $padding;
-  background: $login-primary;
-  color: $text-color-light;
-  &:hover {
-    background: scale-color($login-primary, $lightness: $darken-factor);
-  }
 }
