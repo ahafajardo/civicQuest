@@ -11,10 +11,6 @@
 .time-entry {
   margin-bottom: $margin;
   display: flex;
-
-  &--hidden {
-    display: none;
-  }
 }
 
 .time-details {
@@ -37,9 +33,6 @@
 
   &:first-child {
     margin-right: $margin;
-  }
-  &:last-child {
-    margin-left: $margin;
   }
 }
 
