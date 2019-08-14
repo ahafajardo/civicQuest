@@ -27,4 +27,4 @@ function stream(next) {
 
 exports.stream = stream;
 exports.reload = reload;
-exports.serve = startServer;
+exports.sync = startServer;
