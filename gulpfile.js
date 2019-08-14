@@ -14,3 +14,5 @@ exports.clean = cleanAll;
 exports.default = series(cleanAll, parallel(html, styles, scripts, images), cleanTmp, serve, watcher);
 
 exports.js = series(cleanAll, bundle);
+
+exports.compile = series(cleanAll, parallel(html, styles, scripts, images), cleanTmp);
