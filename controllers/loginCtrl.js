@@ -1,28 +1,13 @@
-const authenticate = require("../services/authenticateSrv");
+const jwt = require("jsonwebtoken");
+const authService = require("../services/authenticateSrv");
 
-function login(username, password, req, res) {
-  console.log("loginCtrl");
-  authenticate(username, password, function(err, user) {
-    if (user) {
-      // Regenerate session when signing in
-      // to prevent fixation
-      req.session.regenerate(function() {
-        // Store the user's primary key
-        // in the session store to be retrieved,
-        // or in this case the entire user object
-        req.session.user = user;
-        req.session.success =
-          "Authenticated as " +
-          user.name +
-          " click to <a href='/logout'>logout</a>. " +
-          " You may now access <a href='/time'>timesheets</a>.";
-      });
-    } else {
-      req.session.error =
-        "Authentication failed, please check your " + " username and password." + " (use 'bird' and 'bureau')";
-      res.redirect("/");
-    }
-  });
+function buildToken(payload) {
+  let user = authService(payload);
+  // query the db for the given username
+  if (!user) return { error: "No user found" };
+  const token = jwt.sign(user, "veryVerySecretKey", { expiresIn: "30m" });
+
+  return { userId: user.id, token };
 }
 
-module.exports = login;
+module.exports = buildToken;
