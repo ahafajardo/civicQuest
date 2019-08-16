@@ -10,7 +10,7 @@ loginForm.addEventListener("submit", login);
 function login(e) {
   e.preventDefault();
   let attempt = {
-    userName: userTextbox.value,
+    username: userTextbox.value,
     password: passTextbox.value,
   };
 

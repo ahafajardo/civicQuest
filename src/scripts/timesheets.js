@@ -8,8 +8,8 @@ const timeEntries = document.querySelector(".time-entries"),
   addTimeEntryStamps = addTimeEntryForm.querySelectorAll("input"),
   addTimeEntryNotes = addTimeEntryForm.querySelector(".time-info__desc"),
   hideAddTimeEntryButton = addTimeEntryForm.querySelector(".btn--danger"),
-  saveAddTimeEntryButton = addTimeEntryForm.querySelector(".btn--secondary"),
-  timerAddTimeEntryButton = addTimeEntryForm.querySelector(".btn--primary");
+  saveAddTimeEntryButton = addTimeEntryForm.querySelector(".btn--secondary");
+//timerAddTimeEntryButton = addTimeEntryForm.querySelector(".btn--primary");
 
 let timesheets = [];
 
@@ -51,13 +51,39 @@ function editTimeEntry(button, timeEntry, id) {
   timeEntry.setAttribute("data-editing", editing == "true" ? "false" : "true");
 }
 
+function pokeTimesheets() {
+  let token = localStorage.getItem("token"),
+    userId = localStorage.getItem("userId");
+  fetch(timeUri, {
+    method: "GET",
+    headers: {
+      Authorization: "bearer " + token,
+    },
+  })
+    .then(res => {
+      if (res.status >= 400 && 500 > res.status) {
+        throw "Bad Request";
+      }
+      return res.json();
+    })
+    .then(data => {
+      console.log(data);
+    })
+    .catch(err => {
+      // localStorage.removeItem("token");
+      // localStorage.removeItem("userId");
+      // window.location.href = returnUrl;
+      console.error(err);
+    });
+}
+
 function getTimesheets() {
   let token = localStorage.getItem("token"),
     userId = localStorage.getItem("userId");
   fetch(timeUri + `/${userId}`, {
     method: "GET",
     headers: {
-      Authorization: "Bearer " + token,
+      Authorization: "JWT " + token,
     },
   })
     .then(res => {
@@ -135,9 +161,9 @@ function getTimesheets() {
       });
     })
     .catch(err => {
-      localStorage.removeItem("token");
-      localStorage.removeItem("userId");
-      //window.location.href = returnUrl;
+      // localStorage.removeItem("token");
+      // localStorage.removeItem("userId");
+      // window.location.href = returnUrl;
       console.error(err);
     });
 }
@@ -155,7 +181,7 @@ function addTimesheet() {
   fetch(timeUri + `/${userId}`, {
     method: "POST",
     headers: {
-      Authorization: "Bearer " + token,
+      Authorization: "JWT " + token,
       Accept: "application/json",
       "Content-Type": "application/json",
     },
@@ -184,7 +210,7 @@ function updateTimesheet(id, stamps, notes) {
   fetch(timeUri + `/${userId}/${id}`, {
     method: "PUT",
     headers: {
-      Authorization: "Bearer " + token,
+      Authorization: "JWT " + token,
       Accept: "application/json",
       "Content-Type": "application/json",
     },
@@ -204,7 +230,7 @@ function deleteTimesheet(id) {
   fetch(timeUri + `/${userId}/${id}`, {
     method: "DELETE",
     headers: {
-      Authorization: "Bearer " + token,
+      Authorization: "JWT " + token,
     },
   })
     .then(() => getTimesheets())

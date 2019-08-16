@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const restrict = require("../services/restrictSrv");
+const passport = require("passport");
 
-router.get("/", restrict, function(req, res) {
+router.get("/", passport.authenticate("jwt", { session: false }), function(req, res) {
   console.log("GET api/timesheets");
   res.sendStatus(200);
 });
