@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const login = require("../controllers/loginCtrl");
-const passport = require("passport");
-const jwt = require("jsonwebtoken");
 
 router.get("/", function(req, res) {
   console.log("GET api/login");

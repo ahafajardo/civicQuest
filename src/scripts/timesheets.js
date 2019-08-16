@@ -13,7 +13,7 @@ const timeEntries = document.querySelector(".time-entries"),
 
 let timesheets = [];
 
-window.addEventListener("DOMContentLoaded", getTimesheets);
+window.addEventListener("DOMContentLoaded", pokeTimesheets);
 saveAddTimeEntryButton.addEventListener("click", saveAddTimeEntry);
 showAddTimeEntryButton.addEventListener("click", toggleAddTimeEntry);
 hideAddTimeEntryButton.addEventListener("click", toggleAddTimeEntry);
@@ -64,15 +64,12 @@ function pokeTimesheets() {
       if (res.status >= 400 && 500 > res.status) {
         throw "Bad Request";
       }
-      return res.json();
-    })
-    .then(data => {
-      console.log(data);
+      console.log(res.status);
     })
     .catch(err => {
-      // localStorage.removeItem("token");
-      // localStorage.removeItem("userId");
-      // window.location.href = returnUrl;
+      localStorage.removeItem("token");
+      localStorage.removeItem("userId");
+      window.location.href = returnUrl;
       console.error(err);
     });
 }
